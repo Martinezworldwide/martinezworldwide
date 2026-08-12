@@ -74,7 +74,7 @@ def render(username: str, height: int, width: int, os_name: str, stack: str, shi
 {''.join(body)}
 <text x="24" y="{height - 29}" class="prompt">$ echo keep_shipping</text>
 <rect x="203" y="{height - 42}" width="9" height="16" fill="#39d353" opacity="0">
-  <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.02;0.03;0.92;0.93" dur="1s" begin="0.01s" repeatCount="indefinite"/>
+  <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.85;0.86;0.99;1" dur="1s" begin="0.01s" repeatCount="indefinite"/>
 </rect>
 <style>
 text{{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}}
