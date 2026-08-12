@@ -2,7 +2,7 @@
 
 <img src="./assets/contribution-heatmap.svg?v=20260812d" width="790" alt="Animated contribution heatmap" />
 
-<img src="./assets/favorite-meme.gif?v=20260812a" width="45%" alt="Favorite meme" />
+<img src="./assets/globe-overlay.svg?v=20260812a" width="45%" alt="Animated cyber globe" />
 &nbsp;&nbsp;
 <img src="./assets/info-card.svg?v=20260812d" width="41%" alt="Neofetch style info card" />
 
