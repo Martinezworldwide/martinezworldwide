@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="790" height="230" viewBox="0 0 790 230" role="img" aria-label="Animated world clock">
+<defs>
+  <clipPath id="clock-clip"><rect x="18" y="16" width="754" height="198" rx="16"/></clipPath>
+  <linearGradient id="clock-bg" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#06170d"/><stop offset="0.58" stop-color="#07110c"/><stop offset="1" stop-color="#020706"/></linearGradient>
+  <radialGradient id="clock-glow" cx="72%" cy="42%" r="58%"><stop offset="0" stop-color="#39d353" stop-opacity="0.22"/><stop offset="1" stop-color="#39d353" stop-opacity="0"/></radialGradient>
+  <filter id="soft-glow"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="790" height="230" rx="18" fill="#020504"/>
+<rect x="18" y="16" width="754" height="198" rx="16" fill="url(#clock-bg)" stroke="#1f8f4d" stroke-width="1.2"/>
+<rect x="18" y="16" width="754" height="198" rx="16" fill="url(#clock-glow)"/>
+<g clip-path="url(#clock-clip)" opacity="0.11">
+<text x="24" y="-36" class="rain">0.ejotyDINSX*bglq<animate attributeName="y" values="-36;266;-36" keyTimes="0;0.92;1" calcMode="discrete" dur="6s" begin="0.01s" repeatCount="indefinite"/></text>
+<text x="44" y="-36" class="rain">fkpuzEJOTY+chmrwB<animate attributeName="y" values="-36;266;-36" keyTimes="0;0.92;1" calcMode="discrete" dur="7s" begin="0.14s" repeatCount="indefinite"/></text>
+<text x="64" y="-36" class="rain">qvAFKPUZ:dinsxCHM<animate attributeName="y" values="-36;266;-36" keyTimes="0;0.92;1" calcMode="discrete" dur="8s" begin="0.27s" repeatCount="indefinite"/></text>
+<text x="84" y="-36" class="rain">BGLQV0.ejotyDINSX<animate attributeName="y" values="-36;266;-36" keyTimes="0;0.92;1" calcMode="discrete" dur="9s" begin="0.40s" repeatCount="indefinite"/></text>
+<text x="104" y="-36" class="rain">MRW1afkpuzEJOTY+c<animate attributeName="y" values="-36;266;-36" keyTimes="0;0.92;1" calcMode="discrete" dur="10s" begin="0.53s" repeatCount="indefinite"/></text>
+<text x="124" y="-36" class="rain">X*bglqvAFKPUZ:din<animate attributeName="y" values="-36;266;-36" keyTimes="0;0.92;1" calcMode="discrete" dur="11s" begin="0.66s" repeatCount="indefinite"/></text>
+<text x="144" y="-36" class="rain">chmrwBGLQV0.ejoty<animate attributeName="y" values="-36;266;-36" keyTimes="0;0.92;1" calcMode="discrete" dur="6s" begin="0.79s" repeatCount="indefinite"/></text>
+<text x="164" y="-36" class="rain">nsxCHMRW1afkpuzEJ<animate attributeName="y" values="-36;266;-36" keyTimes="0;0.92;1" calcMode="discrete" dur="7s" begin="0.92s" repeatCount="indefinite"/></text>
+<text x="184" y="-36" class="rain">yDINSX*bglqvAFKPU<animate attributeName="y" values="-36;266;-36" keyTimes="0;0.92;1" calcMode="discrete" dur="8s" begin="1.05s" repeatCount="indefinite"/></text>
+<text x="204" y="-36" class="rain">JOTY+chmrwBGLQV0.<animate attributeName="y" values="-36;266;-36" keyTimes="0;0.92;1" calcMode="discrete" dur="9s" begin="1.18s" repeatCount="indefinite"/></text>
+<text x="224" y="-36" class="rain">UZ:dinsxCHMRW1afk<animate attributeName="y" values="-36;266;-36" keyTimes="0;0.92;1" calcMode="discrete" dur="10s" begin="0.01s" repeatCount="indefinite"/></text>
+<text x="244" y="-36" class="rain">.ejotyDINSX*bglqv<animate attributeName="y" values="-36;266;-36" keyTimes="0;0.92;1" calcMode="discrete" dur="11s" begin="0.14s" repeatCount="indefinite"/></text>
+<text x="264" y="-36" class="rain">kpuzEJOTY+chmrwBG<animate attributeName="y" values="-36;266;-36" keyTimes="0;0.92;1" calcMode="discrete" dur="6s" begin="0.27s" repeatCount="indefinite"/></text>
+<text x="284" y="-36" class="rain">vAFKPUZ:dinsxCHMR<animate attributeName="y" values="-36;266;-36" keyTimes="0;0.92;1" calcMode="discrete" dur="7s" begin="0.40s" repeatCount="indefinite"/></text>
+<text x="304" y="-36" class="rain">GLQV0.ejotyDINSX*<animate attributeName="y" values="-36;266;-36" keyTimes="0;0.92;1" calcMode="discrete" dur="8s" begin="0.53s" repeatCount="indefinite"/></text>
+<text x="324" y="-36" class="rain">RW1afkpuzEJOTY+ch<animate attributeName="y" values="-36;266;-36" keyTimes="0;0.92;1" calcMode="discrete" dur="9s" begin="0.66s" repeatCount="indefinite"/></text>
+<text x="344" y="-36" class="rain">*bglqvAFKPUZ:dins<animate attributeName="y" values="-36;266;-36" keyTimes="0;0.92;1" calcMode="discrete" dur="10s" begin="0.79s" repeatCount="indefinite"/></text>
+<text x="364" y="-36" class="rain">hmrwBGLQV0.ejotyD<animate attributeName="y" values="-36;266;-36" keyTimes="0;0.92;1" calcMode="discrete" dur="11s" begin="0.92s" repeatCount="indefinite"/></text>
+<text x="384" y="-36" class="rain">sxCHMRW1afkpuzEJO<animate attributeName="y" values="-36;266;-36" keyTimes="0;0.92;1" calcMode="discrete" dur="6s" begin="1.05s" repeatCount="indefinite"/></text>
+<text x="404" y="-36" class="rain">DINSX*bglqvAFKPUZ<animate attributeName="y" values="-36;266;-36" keyTimes="0;0.92;1" calcMode="discrete" dur="7s" begin="1.18s" repeatCount="indefinite"/></text>
+<text x="424" y="-36" class="rain">OTY+chmrwBGLQV0.e<animate attributeName="y" values="-36;266;-36" keyTimes="0;0.92;1" calcMode="discrete" dur="8s" begin="0.01s" repeatCount="indefinite"/></text>
+<text x="444" y="-36" class="rain">Z:dinsxCHMRW1afkp<animate attributeName="y" values="-36;266;-36" keyTimes="0;0.92;1" calcMode="discrete" dur="9s" begin="0.14s" repeatCount="indefinite"/></text>
+<text x="464" y="-36" class="rain">ejotyDINSX*bglqvA<animate attributeName="y" values="-36;266;-36" keyTimes="0;0.92;1" calcMode="discrete" dur="10s" begin="0.27s" repeatCount="indefinite"/></text>
+<text x="484" y="-36" class="rain">puzEJOTY+chmrwBGL<animate attributeName="y" values="-36;266;-36" keyTimes="0;0.92;1" calcMode="discrete" dur="11s" begin="0.40s" repeatCount="indefinite"/></text>
+<text x="504" y="-36" class="rain">AFKPUZ:dinsxCHMRW<animate attributeName="y" values="-36;266;-36" keyTimes="0;0.92;1" calcMode="discrete" dur="6s" begin="0.53s" repeatCount="indefinite"/></text>
+<text x="524" y="-36" class="rain">LQV0.ejotyDINSX*b<animate attributeName="y" values="-36;266;-36" keyTimes="0;0.92;1" calcMode="discrete" dur="7s" begin="0.66s" repeatCount="indefinite"/></text>
+<text x="544" y="-36" class="rain">W1afkpuzEJOTY+chm<animate attributeName="y" values="-36;266;-36" keyTimes="0;0.92;1" calcMode="discrete" dur="8s" begin="0.79s" repeatCount="indefinite"/></text>
+<text x="564" y="-36" class="rain">bglqvAFKPUZ:dinsx<animate attributeName="y" values="-36;266;-36" keyTimes="0;0.92;1" calcMode="discrete" dur="9s" begin="0.92s" repeatCount="indefinite"/></text>
+<text x="584" y="-36" class="rain">mrwBGLQV0.ejotyDI<animate attributeName="y" values="-36;266;-36" keyTimes="0;0.92;1" calcMode="discrete" dur="10s" begin="1.05s" repeatCount="indefinite"/></text>
+<text x="604" y="-36" class="rain">xCHMRW1afkpuzEJOT<animate attributeName="y" values="-36;266;-36" keyTimes="0;0.92;1" calcMode="discrete" dur="11s" begin="1.18s" repeatCount="indefinite"/></text>
+<text x="624" y="-36" class="rain">INSX*bglqvAFKPUZ:<animate attributeName="y" values="-36;266;-36" keyTimes="0;0.92;1" calcMode="discrete" dur="6s" begin="0.01s" repeatCount="indefinite"/></text>
+<text x="644" y="-36" class="rain">TY+chmrwBGLQV0.ej<animate attributeName="y" values="-36;266;-36" keyTimes="0;0.92;1" calcMode="discrete" dur="7s" begin="0.14s" repeatCount="indefinite"/></text>
+<text x="664" y="-36" class="rain">:dinsxCHMRW1afkpu<animate attributeName="y" values="-36;266;-36" keyTimes="0;0.92;1" calcMode="discrete" dur="8s" begin="0.27s" repeatCount="indefinite"/></text>
+<text x="684" y="-36" class="rain">jotyDINSX*bglqvAF<animate attributeName="y" values="-36;266;-36" keyTimes="0;0.92;1" calcMode="discrete" dur="9s" begin="0.40s" repeatCount="indefinite"/></text>
+<text x="704" y="-36" class="rain">uzEJOTY+chmrwBGLQ<animate attributeName="y" values="-36;266;-36" keyTimes="0;0.92;1" calcMode="discrete" dur="10s" begin="0.53s" repeatCount="indefinite"/></text>
+<text x="724" y="-36" class="rain">FKPUZ:dinsxCHMRW1<animate attributeName="y" values="-36;266;-36" keyTimes="0;0.92;1" calcMode="discrete" dur="11s" begin="0.66s" repeatCount="indefinite"/></text>
+<text x="744" y="-36" class="rain">QV0.ejotyDINSX*bg<animate attributeName="y" values="-36;266;-36" keyTimes="0;0.92;1" calcMode="discrete" dur="6s" begin="0.79s" repeatCount="indefinite"/></text>
+<text x="764" y="-36" class="rain">1afkpuzEJOTY+chmr<animate attributeName="y" values="-36;266;-36" keyTimes="0;0.92;1" calcMode="discrete" dur="7s" begin="0.92s" repeatCount="indefinite"/></text>
+</g>
+<circle cx="39" cy="38" r="5" fill="#ff5f57"/><circle cx="57" cy="38" r="5" fill="#ffbd2e"/><circle cx="75" cy="38" r="5" fill="#28c840"/>
+<text x="96" y="43" class="title">martinezworldwide@github: ~/world-clock</text>
+<g clip-path="url(#clock-clip)">
+  <rect x="416" y="56" width="312" height="122" rx="10" fill="#06120b" opacity="0.76"/>
+  <ellipse cx="572" cy="117" rx="132" ry="52" fill="none" stroke="#245b37" stroke-width="1"/>
+  <ellipse cx="572" cy="117" rx="87" ry="52" fill="none" stroke="#163d26" stroke-width="0.8"/>
+  <ellipse cx="572" cy="117" rx="44" ry="52" fill="none" stroke="#12331f" stroke-width="0.8"/>
+  <path d="M440 117h264M572 65v104M458 91h228M458 143h228" stroke="#12331f" stroke-width="0.8"/>
+  <path d="M154 88C248 54 390 44 488 94S583 126 622 86" fill="none" stroke="#39d353" stroke-width="1.3" opacity="0.42" stroke-dasharray="4 8">
+    <animate attributeName="stroke-dashoffset" values="48;0" dur="4.8s" begin="0.01s" repeatCount="indefinite"/>
+  </path>
+  <g filter="url(#soft-glow)"><circle cx="480" cy="97" r="3.2" fill="#39d353"/><circle cx="480" cy="97" r="3.2" fill="none" stroke="#7cff9b" stroke-width="1" opacity="0"><animate attributeName="r" values="3;3;13;20" keyTimes="0;0.12;0.55;1" dur="3.6s" begin="0.01s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.75;0.2;0" keyTimes="0;0.12;0.55;1" dur="3.6s" begin="0.01s" repeatCount="indefinite"/></circle><text x="488" y="90" class="pin-label">Maryland</text><circle cx="553" cy="117" r="3.2" fill="#39d353"/><circle cx="553" cy="117" r="3.2" fill="none" stroke="#7cff9b" stroke-width="1" opacity="0"><animate attributeName="r" values="3;3;13;20" keyTimes="0;0.12;0.55;1" dur="3.6s" begin="0.19s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.75;0.2;0" keyTimes="0;0.12;0.55;1" dur="3.6s" begin="0.19s" repeatCount="indefinite"/></circle><text x="561" y="110" class="pin-label">UTC</text><circle cx="558" cy="82" r="3.2" fill="#39d353"/><circle cx="558" cy="82" r="3.2" fill="none" stroke="#7cff9b" stroke-width="1" opacity="0"><animate attributeName="r" values="3;3;13;20" keyTimes="0;0.12;0.55;1" dur="3.6s" begin="0.37s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.75;0.2;0" keyTimes="0;0.12;0.55;1" dur="3.6s" begin="0.37s" repeatCount="indefinite"/></circle><text x="566" y="75" class="pin-label">London</text><circle cx="620" cy="96" r="3.2" fill="#39d353"/><circle cx="620" cy="96" r="3.2" fill="none" stroke="#7cff9b" stroke-width="1" opacity="0"><animate attributeName="r" values="3;3;13;20" keyTimes="0;0.12;0.55;1" dur="3.6s" begin="0.55s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.75;0.2;0" keyTimes="0;0.12;0.55;1" dur="3.6s" begin="0.55s" repeatCount="indefinite"/></circle><text x="628" y="89" class="pin-label">Dubai</text><circle cx="692" cy="88" r="3.2" fill="#39d353"/><circle cx="692" cy="88" r="3.2" fill="none" stroke="#7cff9b" stroke-width="1" opacity="0"><animate attributeName="r" values="3;3;13;20" keyTimes="0;0.12;0.55;1" dur="3.6s" begin="0.73s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.75;0.2;0" keyTimes="0;0.12;0.55;1" dur="3.6s" begin="0.73s" repeatCount="indefinite"/></circle><text x="700" y="81" class="pin-label">Tokyo</text><circle cx="530" cy="143" r="3.2" fill="#39d353"/><circle cx="530" cy="143" r="3.2" fill="none" stroke="#7cff9b" stroke-width="1" opacity="0"><animate attributeName="r" values="3;3;13;20" keyTimes="0;0.12;0.55;1" dur="3.6s" begin="0.91s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.75;0.2;0" keyTimes="0;0.12;0.55;1" dur="3.6s" begin="0.91s" repeatCount="indefinite"/></circle><text x="538" y="136" class="pin-label">Sao Paulo</text></g>
+  <rect x="416" y="56" width="42" height="122" fill="#6dff95" opacity="0">
+    <animate attributeName="x" values="416;686;416" keyTimes="0;0.88;1" dur="7s" begin="0.01s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0.18;0" keyTimes="0;0.42;1" dur="7s" begin="0.01s" repeatCount="indefinite"/>
+  </rect>
+</g>
+<text x="34" y="52" class="label">city</text><text x="142" y="52" class="label">time</text><text x="205" y="52" class="label">local date</text><text x="305" y="52" class="label">offset</text>
+<text x="34" y="70" class="city">Maryland</text><text x="142" y="70" class="time">00:09</text><text x="205" y="70" class="date">Wed Aug 12</text><text x="305" y="70" class="offset">UTC-04:00</text>
+<text x="34" y="93" class="city">UTC</text><text x="142" y="93" class="time">04:09</text><text x="205" y="93" class="date">Wed Aug 12</text><text x="305" y="93" class="offset">UTC+00:00</text>
+<text x="34" y="116" class="city">London</text><text x="142" y="116" class="time">05:09</text><text x="205" y="116" class="date">Wed Aug 12</text><text x="305" y="116" class="offset">UTC+01:00</text>
+<text x="34" y="139" class="city">Dubai</text><text x="142" y="139" class="time">08:09</text><text x="205" y="139" class="date">Wed Aug 12</text><text x="305" y="139" class="offset">UTC+04:00</text>
+<text x="34" y="162" class="city">Tokyo</text><text x="142" y="162" class="time">13:09</text><text x="205" y="162" class="date">Wed Aug 12</text><text x="305" y="162" class="offset">UTC+09:00</text>
+<text x="34" y="185" class="city">Sao Paulo</text><text x="142" y="185" class="time">01:09</text><text x="205" y="185" class="date">Wed Aug 12</text><text x="305" y="185" class="offset">UTC-03:00</text>
+<text x="34" y="202" class="updated">updated: 2026-08-12 04:09 UTC</text>
+<text x="526" y="202" class="prompt">$ chronyc tracking</text>
+<rect x="688" y="189" width="9" height="16" fill="#39d353" opacity="0">
+  <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.85;0.86;0.99;1" dur="1s" begin="0.01s" repeatCount="indefinite"/>
+</rect>
+<style>
+text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.title{fill:#e4ffea;font-size:16px;font-weight:700}.label{fill:#7fb98d;font-size:10px;text-transform:uppercase}
+.city{fill:#d7ffe3;font-size:13px;font-weight:700}.time{fill:#39d353;font-size:16px;font-weight:800}
+.date,.offset{fill:#b8e8c2;font-size:12px}.updated{fill:#7fb98d;font-size:11px}.prompt{fill:#39d353;font-size:13px}
+.rain{fill:#39d353;font-size:10px;writing-mode:vertical-rl}.pin-label{fill:#b8e8c2;font-size:9px}
+</style>
+</svg>
