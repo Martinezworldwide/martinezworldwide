@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="380" viewBox="0 0 360 380" role="img" aria-label="martinezworldwide neofetch info card">
+<defs>
+  <clipPath id="card-clip"><rect x="1" y="1" width="358" height="378" rx="14"/></clipPath>
+</defs>
+<rect width="360" height="380" rx="14" fill="#050807"/>
+<rect x="1" y="1" width="358" height="378" rx="14" fill="#07130d" stroke="#1f6f43"/>
+<g clip-path="url(#card-clip)" opacity="0.20">
+  <text x="18" y="-20" class="rain">0101make ship push build git svg smil terminal</text>
+  <animateTransform attributeName="transform" type="translate" values="0 0;0 460;0 0" keyTimes="0;0.92;1" calcMode="discrete" dur="8s" begin="0.01s" repeatCount="indefinite"/>
+</g>
+<circle cx="22" cy="22" r="5" fill="#ff5f57"/><circle cx="40" cy="22" r="5" fill="#ffbd2e"/><circle cx="58" cy="22" r="5" fill="#28c840"/>
+<text x="76" y="27" class="title">martinezworldwide@github</text>
+<text x="28" y="82" class="logo">       .</text>
+<text x="28" y="102" class="logo">      / \</text>
+<text x="28" y="122" class="logo">     / _ \</text>
+<text x="28" y="142" class="logo">    / ___ \</text>
+<text x="28" y="162" class="logo">   /_/   \_\</text>
+<text x="148" y="58" class="name">martinezworldwide</text>
+<text x="148" y="92" class="key">OS</text><text x="232" y="92" class="value">macOS / GitHub Actions</text><text x="148" y="120" class="key">Stack</text><text x="232" y="120" class="value">Python, SVG, SMIL, CI</text><text x="148" y="148" class="key">Ship</text><text x="232" y="148" class="value">profile art, tools, automation</text><text x="148" y="176" class="key">Socials</text><text x="232" y="176" class="value">GitHub, LinkedIn, X</text>
+<text x="28" y="351" class="prompt">$ echo keep_shipping</text>
+<rect x="218" y="338" width="10" height="17" fill="#39d353" opacity="0">
+  <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.1;0.11;0.58;0.59" dur="1s" begin="0.01s" repeatCount="indefinite"/>
+</rect>
+<style>
+text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.title{fill:#d7ffe3;font-size:13px}.name{fill:#39d353;font-size:18px;font-weight:700}
+.logo{fill:#39d353;font-size:18px}.key{fill:#8fd19e;font-size:13px}.value{fill:#d7ffe3;font-size:13px}
+.prompt{fill:#39d353;font-size:14px}.rain{fill:#39d353;font-size:11px;writing-mode:vertical-rl}
+</style>
+</svg>
