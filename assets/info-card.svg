@@ -1,15 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="360" height="380" viewBox="0 0 360 380" role="img" aria-label="Martinezworldwide neofetch info card">
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="330" viewBox="0 0 300 330" role="img" aria-label="Martinezworldwide neofetch info card">
 <defs>
-  <clipPath id="card-clip"><rect x="1" y="1" width="358" height="378" rx="14"/></clipPath>
+  <clipPath id="card-clip"><rect x="1" y="1" width="298" height="328" rx="14"/></clipPath>
   <linearGradient id="card-bg" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#06190f"/><stop offset="1" stop-color="#020806"/></linearGradient>
   <radialGradient id="card-glow" cx="75%" cy="20%" r="70%"><stop offset="0" stop-color="#39d353" stop-opacity="0.18"/><stop offset="1" stop-color="#39d353" stop-opacity="0"/></radialGradient>
 </defs>
-<rect width="360" height="380" rx="14" fill="#050807"/>
-<rect x="1" y="1" width="358" height="378" rx="14" fill="url(#card-bg)" stroke="#1f8f4d" stroke-width="1.2"/>
-<rect x="1" y="1" width="358" height="378" rx="14" fill="url(#card-glow)"/>
+<rect width="300" height="330" rx="14" fill="#050807"/>
+<rect x="1" y="1" width="298" height="328" rx="14" fill="url(#card-bg)" stroke="#1f8f4d" stroke-width="1.2"/>
+<rect x="1" y="1" width="298" height="328" rx="14" fill="url(#card-glow)"/>
 <g clip-path="url(#card-clip)" opacity="0.13">
   <text x="18" y="-20" class="rain">0101 make ship build git svg smil terminal</text>
-  <animateTransform attributeName="transform" type="translate" values="0 0;0 460;0 0" keyTimes="0;0.92;1" calcMode="discrete" dur="8s" begin="0.01s" repeatCount="indefinite"/>
+  <animateTransform attributeName="transform" type="translate" values="0 0;0 410;0 0" keyTimes="0;0.92;1" calcMode="discrete" dur="8s" begin="0.01s" repeatCount="indefinite"/>
 </g>
 <circle cx="22" cy="22" r="5" fill="#ff5f57"/><circle cx="40" cy="22" r="5" fill="#ffbd2e"/><circle cx="58" cy="22" r="5" fill="#28c840"/>
 <text x="76" y="27" class="title">Martinezworldwide@github</text>
@@ -21,8 +21,8 @@
 <text x="158" y="72" class="name">Martinezworldwide</text>
 <line x1="158" y1="84" x2="318" y2="84" stroke="#245b37"/>
 <text x="158" y="108" class="key">OS</text><text x="222" y="108" class="value">macOS + Linux</text><text x="158" y="138" class="key">Stack</text><text x="222" y="138" class="value">Python / JS / SVG</text><text x="222" y="156" class="value muted">/ CI</text><text x="158" y="182" class="key">Ship</text><text x="222" y="182" class="value">tools + automation</text><text x="158" y="212" class="key">Socials</text><text x="222" y="212" class="value">GitHub / LinkedIn</text><text x="222" y="230" class="value muted">/ X</text>
-<text x="28" y="351" class="prompt">$ echo keep_shipping</text>
-<rect x="218" y="338" width="10" height="17" fill="#39d353" opacity="0">
+<text x="28" y="301" class="prompt">$ echo keep_shipping</text>
+<rect x="218" y="288" width="10" height="17" fill="#39d353" opacity="0">
   <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.1;0.11;0.58;0.59" dur="1s" begin="0.01s" repeatCount="indefinite"/>
 </rect>
 <style>
