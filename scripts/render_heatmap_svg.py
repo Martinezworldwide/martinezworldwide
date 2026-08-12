@@ -7,12 +7,11 @@ import argparse
 import calendar
 import html
 import json
-from collections import defaultdict
-from datetime import date, datetime
+from datetime import date
 from pathlib import Path
 
 
-PALETTE = ["#102319", "#0e4429", "#006d32", "#26a641", "#39d353"]
+PALETTE = ["#0c2015", "#0f3b24", "#0f6132", "#24a148", "#39d353"]
 SAFE_RAIN = "01*+:.abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 
@@ -20,7 +19,7 @@ def svg_text(x: int, y: int, text: str, cls: str = "", extra: str = "") -> str:
     return f'<text x="{x}" y="{y}" class="{cls}" {extra}>{html.escape(text)}</text>'
 
 
-def month_labels(days: list[dict], grid_x: int, cell: int, gap: int) -> list[str]:
+def month_labels(days: list[dict], grid_x: int, grid_y: int, cell: int, gap: int) -> list[str]:
     seen = set()
     labels = []
     for item in days:
@@ -28,12 +27,12 @@ def month_labels(days: list[dict], grid_x: int, cell: int, gap: int) -> list[str
         if d.day <= 7 and d.month not in seen:
             seen.add(d.month)
             week = (d - date.fromisoformat(days[0]["date"])).days // 7
-            labels.append(svg_text(grid_x + week * (cell + gap), 73, calendar.month_abbr[d.month], "label"))
+            labels.append(svg_text(grid_x + week * (cell + gap), grid_y - 12, calendar.month_abbr[d.month], "month"))
     return labels
 
 
 def rain_panel(panel_id: str, x: int, y: int, w: int, h: int, cols: int, rows: int) -> str:
-    out = [f'<g clip-path="url(#{panel_id})" opacity="0.24">']
+    out = [f'<g clip-path="url(#{panel_id})" opacity="0.13">']
     for c in range(cols):
         cx = x + 7 + c * max(10, w // cols)
         chars = "".join(SAFE_RAIN[(c * 17 + r * 7) % len(SAFE_RAIN)] for r in range(rows))
@@ -51,33 +50,37 @@ def rain_panel(panel_id: str, x: int, y: int, w: int, h: int, cols: int, rows: i
 
 def render(data: dict) -> str:
     days = data["days"]
-    by_weekday = defaultdict(int)
-    width, height = 790, 300
-    grid_x, grid_y, cell, gap = 78, 92, 11, 3
+    width, height = 790, 220
+    panel_x, panel_y, panel_w, panel_h = 18, 16, 754, 188
+    grid_x, grid_y, cell, gap = 56, 74, 10, 3
     username = data.get("username", "github")
     total = str(data.get("yearly_total", 0))
 
     parts = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-label="{html.escape(username)} contribution heatmap">',
         "<defs>",
-        '<clipPath id="panel-clip"><rect x="14" y="14" width="762" height="272" rx="16"/></clipPath>',
-        '<clipPath id="total-type-clip"><rect x="525" y="246" width="150" height="24"><animate attributeName="width" values="0;0;150" keyTimes="0;0.12;1" dur="2.4s" begin="0.01s" fill="freeze"/></rect></clipPath>',
+        f'<clipPath id="panel-clip"><rect x="{panel_x}" y="{panel_y}" width="{panel_w}" height="{panel_h}" rx="14"/></clipPath>',
+        '<linearGradient id="panel-bg" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#06170d"/><stop offset="0.55" stop-color="#06110b"/><stop offset="1" stop-color="#020705"/></linearGradient>',
+        '<radialGradient id="grid-glow" cx="86%" cy="38%" r="55%"><stop offset="0" stop-color="#1db954" stop-opacity="0.28"/><stop offset="1" stop-color="#1db954" stop-opacity="0"/></radialGradient>',
+        '<clipPath id="total-type-clip"><rect x="604" y="165" width="130" height="24"><animate attributeName="width" values="0;0;130" keyTimes="0;0.12;1" dur="2.4s" begin="0.01s" fill="freeze"/></rect></clipPath>',
         '<filter id="glow"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>',
         "</defs>",
-        '<rect width="790" height="300" rx="18" fill="#050807"/>',
-        '<rect x="14" y="14" width="762" height="272" rx="16" fill="#07130d" stroke="#1f6f43"/>',
-        '<circle cx="34" cy="34" r="5" fill="#ff5f57"/><circle cx="52" cy="34" r="5" fill="#ffbd2e"/><circle cx="70" cy="34" r="5" fill="#28c840"/>',
-        rain_panel("panel-clip", 14, 14, 762, 272, 58, 28),
-        svg_text(92, 39, f"{username}@github: ~/contributions", "title"),
-        svg_text(22, 263, "Less", "label"),
+        '<rect width="790" height="220" rx="18" fill="#020504"/>',
+        f'<rect x="{panel_x}" y="{panel_y}" width="{panel_w}" height="{panel_h}" rx="14" fill="url(#panel-bg)" stroke="#1f8f4d" stroke-width="1.2"/>',
+        f'<rect x="{panel_x}" y="{panel_y}" width="{panel_w}" height="{panel_h}" rx="14" fill="url(#grid-glow)"/>',
+        '<circle cx="39" cy="38" r="5" fill="#ff5f57"/><circle cx="57" cy="38" r="5" fill="#ffbd2e"/><circle cx="75" cy="38" r="5" fill="#28c840"/>',
+        rain_panel("panel-clip", panel_x, panel_y + 8, panel_w, panel_h - 14, 42, 18),
+        f'<rect x="{panel_x + 10}" y="{panel_y + 44}" width="{panel_w - 20}" height="96" rx="8" fill="#06120b" opacity="0.72"/>',
+        svg_text(96, 43, f"{username}@github: ~/contributions", "title"),
+        svg_text(45, 181, "Less", "legend"),
     ]
 
     for i, color in enumerate(PALETTE):
-        parts.append(f'<rect x="{58 + i * 17}" y="252" width="11" height="11" rx="3" fill="{color}" stroke="#24452f"/>')
-    parts.append(svg_text(146, 263, "More", "label"))
-    parts.extend(month_labels(days, grid_x, cell, gap))
+        parts.append(f'<rect x="{82 + i * 17}" y="170" width="11" height="11" rx="3" fill="{color}" stroke="#255235"/>')
+    parts.append(svg_text(170, 181, "More", "legend"))
+    parts.extend(month_labels(days, grid_x, grid_y, cell, gap))
     for label, row in [("Mon", 1), ("Wed", 3), ("Fri", 5)]:
-        parts.append(svg_text(35, grid_y + row * (cell + gap) + 9, label, "label"))
+        parts.append(svg_text(25, grid_y + row * (cell + gap) + 8, label, "weekday"))
 
     for idx, item in enumerate(days):
         d = date.fromisoformat(item["date"])
@@ -92,7 +95,7 @@ def render(data: dict) -> str:
         flash = "#b7ffcf" if level else "#31543c"
         parts.append(
             f'<g transform="translate({x + cell / 2} {y + cell / 2}) scale(1)">'
-            f'<rect x="{-cell / 2}" y="{-cell / 2}" width="{cell}" height="{cell}" rx="3" fill="{color}" stroke="#1f3528">'
+            f'<rect x="{-cell / 2}" y="{-cell / 2}" width="{cell}" height="{cell}" rx="3" fill="{color}" stroke="#255239" stroke-width="0.8">'
             f'<animateTransform attributeName="transform" type="scale" values="1;1;1.42;0.86;1" keyTimes="0;0.55;0.7;0.84;1" dur="2.4s" begin="{delay:.3f}s" fill="freeze"/>'
             f'<animate attributeName="fill" values="{color};{color};{flash};{color}" keyTimes="0;0.55;0.68;1" dur="2.4s" begin="{delay:.3f}s" fill="freeze"/>'
             "</rect>"
@@ -113,21 +116,21 @@ def render(data: dict) -> str:
 
     grid_w = 53 * (cell + gap)
     parts.append(
-        f'<rect x="{grid_x - 8}" y="{grid_y - 8}" width="32" height="118" fill="#6dff95" opacity="0.0" filter="url(#glow)">'
+        f'<rect x="{grid_x - 6}" y="{grid_y - 7}" width="28" height="104" fill="#6dff95" opacity="0.0" filter="url(#glow)">'
         f'<animate attributeName="x" values="{grid_x - 8};{grid_x + grid_w}" dur="9s" begin="0.01s" repeatCount="indefinite"/>'
         '<animate attributeName="opacity" values="0;0.24;0" keyTimes="0;0.45;1" dur="9s" begin="0.01s" repeatCount="indefinite"/>'
         "</rect>"
     )
-    parts.append(f'<g clip-path="url(#total-type-clip)">{svg_text(525, 263, f"total: {total}", "total")}</g>')
+    parts.append(f'<g clip-path="url(#total-type-clip)">{svg_text(604, 181, f"total: {total}", "total")}</g>')
     parts.append(
-        '<rect x="676" y="250" width="9" height="15" fill="#39d353" opacity="0">'
+        '<rect x="725" y="168" width="9" height="15" fill="#39d353" opacity="0">'
         '<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.1;0.11;0.58;0.59" dur="1s" begin="0.01s" repeatCount="indefinite"/>'
         "</rect>"
     )
     parts.append(
         "<style>"
         "text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}"
-        ".title{fill:#d7ffe3;font-size:15px}.label{fill:#7ca98a;font-size:11px}.total{fill:#39d353;font-size:15px}.rain{fill:#39d353;font-size:10px;writing-mode:vertical-rl}"
+        ".title{fill:#e4ffea;font-size:16px;font-weight:700}.month{fill:#91b89a;font-size:10px}.weekday{fill:#8db899;font-size:11px}.legend{fill:#8db899;font-size:11px}.total{fill:#39d353;font-size:16px;font-weight:700}.rain{fill:#39d353;font-size:10px;writing-mode:vertical-rl}"
         "</style></svg>"
     )
     return "\n".join(parts)

@@ -8,11 +8,31 @@ import html
 from pathlib import Path
 
 
-def line(y: int, label: str, value: str) -> str:
-    return (
-        f'<text x="148" y="{y}" class="key">{html.escape(label)}</text>'
-        f'<text x="232" y="{y}" class="value">{html.escape(value)}</text>'
-    )
+def wrap(value: str, width: int = 18) -> list[str]:
+    words = value.replace(",", " ,").split()
+    lines: list[str] = []
+    current = ""
+    for word in words:
+        word = word.replace(" ,", ",")
+        candidate = f"{current} {word}".strip()
+        if len(candidate) > width and current:
+            lines.append(current)
+            current = word
+        else:
+            current = candidate
+    if current:
+        lines.append(current)
+    return lines[:2]
+
+
+def line(y: int, label: str, value: str) -> tuple[str, int]:
+    lines = wrap(value)
+    body = [f'<text x="158" y="{y}" class="key">{html.escape(label)}</text>']
+    body.append(f'<text x="222" y="{y}" class="value">{html.escape(lines[0])}</text>')
+    if len(lines) > 1:
+        body.append(f'<text x="222" y="{y + 18}" class="value muted">{html.escape(lines[1])}</text>')
+        return "".join(body), 44
+    return "".join(body), 30
 
 
 def render(username: str, height: int, width: int, os_name: str, stack: str, ships: str, socials: str) -> str:
@@ -23,29 +43,34 @@ def render(username: str, height: int, width: int, os_name: str, stack: str, shi
         ("Socials", socials),
     ]
     body = []
-    y = 92
+    y = 108
     for label, value in rows:
-        body.append(line(y, label, value))
-        y += 28
+        rendered, advance = line(y, label, value)
+        body.append(rendered)
+        y += advance
 
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-label="{html.escape(username)} neofetch info card">
 <defs>
   <clipPath id="card-clip"><rect x="1" y="1" width="{width - 2}" height="{height - 2}" rx="14"/></clipPath>
+  <linearGradient id="card-bg" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#06190f"/><stop offset="1" stop-color="#020806"/></linearGradient>
+  <radialGradient id="card-glow" cx="75%" cy="20%" r="70%"><stop offset="0" stop-color="#39d353" stop-opacity="0.18"/><stop offset="1" stop-color="#39d353" stop-opacity="0"/></radialGradient>
 </defs>
 <rect width="{width}" height="{height}" rx="14" fill="#050807"/>
-<rect x="1" y="1" width="{width - 2}" height="{height - 2}" rx="14" fill="#07130d" stroke="#1f6f43"/>
-<g clip-path="url(#card-clip)" opacity="0.20">
-  <text x="18" y="-20" class="rain">0101make ship push build git svg smil terminal</text>
+<rect x="1" y="1" width="{width - 2}" height="{height - 2}" rx="14" fill="url(#card-bg)" stroke="#1f8f4d" stroke-width="1.2"/>
+<rect x="1" y="1" width="{width - 2}" height="{height - 2}" rx="14" fill="url(#card-glow)"/>
+<g clip-path="url(#card-clip)" opacity="0.13">
+  <text x="18" y="-20" class="rain">0101 make ship build git svg smil terminal</text>
   <animateTransform attributeName="transform" type="translate" values="0 0;0 {height + 80};0 0" keyTimes="0;0.92;1" calcMode="discrete" dur="8s" begin="0.01s" repeatCount="indefinite"/>
 </g>
 <circle cx="22" cy="22" r="5" fill="#ff5f57"/><circle cx="40" cy="22" r="5" fill="#ffbd2e"/><circle cx="58" cy="22" r="5" fill="#28c840"/>
 <text x="76" y="27" class="title">{html.escape(username)}@github</text>
-<text x="28" y="82" class="logo">       .</text>
-<text x="28" y="102" class="logo">      / \\</text>
-<text x="28" y="122" class="logo">     / _ \\</text>
-<text x="28" y="142" class="logo">    / ___ \\</text>
-<text x="28" y="162" class="logo">   /_/   \\_\\</text>
-<text x="148" y="58" class="name">{html.escape(username)}</text>
+<text x="28" y="96" class="logo">       .</text>
+<text x="28" y="116" class="logo">      / \\</text>
+<text x="28" y="136" class="logo">     / _ \\</text>
+<text x="28" y="156" class="logo">    / ___ \\</text>
+<text x="28" y="176" class="logo">   /_/   \\_\\</text>
+<text x="158" y="72" class="name">{html.escape(username)}</text>
+<line x1="158" y1="84" x2="318" y2="84" stroke="#245b37"/>
 {''.join(body)}
 <text x="28" y="{height - 29}" class="prompt">$ echo keep_shipping</text>
 <rect x="218" y="{height - 42}" width="10" height="17" fill="#39d353" opacity="0">
@@ -53,8 +78,8 @@ def render(username: str, height: int, width: int, os_name: str, stack: str, shi
 </rect>
 <style>
 text{{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}}
-.title{{fill:#d7ffe3;font-size:13px}}.name{{fill:#39d353;font-size:18px;font-weight:700}}
-.logo{{fill:#39d353;font-size:18px}}.key{{fill:#8fd19e;font-size:13px}}.value{{fill:#d7ffe3;font-size:13px}}
+.title{{fill:#e4ffea;font-size:12px;font-weight:700}}.name{{fill:#39d353;font-size:17px;font-weight:700}}
+.logo{{fill:#39d353;font-size:18px}}.key{{fill:#8fd19e;font-size:12px;font-weight:700}}.value{{fill:#d7ffe3;font-size:12px}}.muted{{fill:#a7d9b2}}
 .prompt{{fill:#39d353;font-size:14px}}.rain{{fill:#39d353;font-size:11px;writing-mode:vertical-rl}}
 </style>
 </svg>
@@ -66,10 +91,10 @@ def main() -> None:
     parser.add_argument("--username", default="USERNAME")
     parser.add_argument("--height", type=int, default=240)
     parser.add_argument("--width", type=int, default=360)
-    parser.add_argument("--os", default="macOS / Linux")
-    parser.add_argument("--stack", default="Python, JS, SVG, CI")
-    parser.add_argument("--ships", default="tools, automations, art")
-    parser.add_argument("--socials", default="GitHub, LinkedIn, X")
+    parser.add_argument("--os", default="macOS + Linux")
+    parser.add_argument("--stack", default="Python / JS / SVG / CI")
+    parser.add_argument("--ships", default="tools + automation")
+    parser.add_argument("--socials", default="GitHub / LinkedIn / X")
     parser.add_argument("--out", default="assets/info-card.svg")
     args = parser.parse_args()
 
