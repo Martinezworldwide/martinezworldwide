@@ -2,7 +2,7 @@ name: Update profile art
 
 on:
   schedule:
-    - cron: "17 8 * * *"
+    - cron: "17 * * * *"
   workflow_dispatch:
   push:
     paths:
@@ -30,11 +30,12 @@ jobs:
         run: |
           python scripts/render_heatmap_svg.py
           python scripts/make_info_card.py --username "${{ github.repository_owner }}" --height 330 --width 300 --os "macOS + Linux" --stack "Python / JS / SVG / CI" --ships "tools + automation" --socials "GitHub / LinkedIn / X"
+          python scripts/make_world_clock.py
       - name: Commit changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/contributions.json assets/contribution-heatmap.svg assets/info-card.svg
+          git add data/contributions.json assets/contribution-heatmap.svg assets/info-card.svg assets/world-clock.svg
           git diff --cached --quiet || git commit -m "Update profile art [skip ci]"
           git pull --rebase origin main
           git push
