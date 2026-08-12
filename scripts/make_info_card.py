@@ -8,7 +8,7 @@ import html
 from pathlib import Path
 
 
-def wrap(value: str, width: int = 18) -> list[str]:
+def wrap(value: str, width: int = 14) -> list[str]:
     words = value.replace(",", " ,").split()
     lines: list[str] = []
     current = ""
@@ -27,12 +27,12 @@ def wrap(value: str, width: int = 18) -> list[str]:
 
 def line(y: int, label: str, value: str) -> tuple[str, int]:
     lines = wrap(value)
-    body = [f'<text x="158" y="{y}" class="key">{html.escape(label)}</text>']
-    body.append(f'<text x="222" y="{y}" class="value">{html.escape(lines[0])}</text>')
+    body = [f'<text x="150" y="{y}" class="key">{html.escape(label)}</text>']
+    body.append(f'<text x="204" y="{y}" class="value">{html.escape(lines[0])}</text>')
     if len(lines) > 1:
-        body.append(f'<text x="222" y="{y + 18}" class="value muted">{html.escape(lines[1])}</text>')
-        return "".join(body), 44
-    return "".join(body), 30
+        body.append(f'<text x="204" y="{y + 16}" class="value muted">{html.escape(lines[1])}</text>')
+        return "".join(body), 38
+    return "".join(body), 27
 
 
 def render(username: str, height: int, width: int, os_name: str, stack: str, ships: str, socials: str) -> str:
@@ -43,7 +43,7 @@ def render(username: str, height: int, width: int, os_name: str, stack: str, shi
         ("Socials", socials),
     ]
     body = []
-    y = 108
+    y = 104
     for label, value in rows:
         rendered, advance = line(y, label, value)
         body.append(rendered)
@@ -62,24 +62,24 @@ def render(username: str, height: int, width: int, os_name: str, stack: str, shi
   <text x="18" y="-20" class="rain">0101 make ship build git svg smil terminal</text>
   <animateTransform attributeName="transform" type="translate" values="0 0;0 {height + 80};0 0" keyTimes="0;0.92;1" calcMode="discrete" dur="8s" begin="0.01s" repeatCount="indefinite"/>
 </g>
-<circle cx="22" cy="22" r="5" fill="#ff5f57"/><circle cx="40" cy="22" r="5" fill="#ffbd2e"/><circle cx="58" cy="22" r="5" fill="#28c840"/>
-<text x="76" y="27" class="title">{html.escape(username)}@github</text>
-<text x="28" y="96" class="logo">       .</text>
-<text x="28" y="116" class="logo">      / \\</text>
-<text x="28" y="136" class="logo">     / _ \\</text>
-<text x="28" y="156" class="logo">    / ___ \\</text>
-<text x="28" y="176" class="logo">   /_/   \\_\\</text>
-<text x="158" y="72" class="name">{html.escape(username)}</text>
-<line x1="158" y1="84" x2="318" y2="84" stroke="#245b37"/>
+<circle cx="18" cy="20" r="4.5" fill="#ff5f57"/><circle cx="34" cy="20" r="4.5" fill="#ffbd2e"/><circle cx="50" cy="20" r="4.5" fill="#28c840"/>
+<text x="64" y="24" class="title">{html.escape(username)}@github</text>
+<text x="24" y="91" class="logo">       .</text>
+<text x="24" y="112" class="logo">      / \\</text>
+<text x="24" y="133" class="logo">     / _ \\</text>
+<text x="24" y="154" class="logo">    / ___ \\</text>
+<text x="24" y="175" class="logo">   /_/   \\_\\</text>
+<text x="150" y="70" class="name">{html.escape(username)}</text>
+<line x1="150" y1="82" x2="{width - 24}" y2="82" stroke="#245b37"/>
 {''.join(body)}
-<text x="28" y="{height - 29}" class="prompt">$ echo keep_shipping</text>
-<rect x="218" y="{height - 42}" width="10" height="17" fill="#39d353" opacity="0">
+<text x="24" y="{height - 29}" class="prompt">$ echo keep_shipping</text>
+<rect x="203" y="{height - 42}" width="9" height="16" fill="#39d353" opacity="0">
   <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.1;0.11;0.58;0.59" dur="1s" begin="0.01s" repeatCount="indefinite"/>
 </rect>
 <style>
 text{{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}}
-.title{{fill:#e4ffea;font-size:12px;font-weight:700}}.name{{fill:#39d353;font-size:17px;font-weight:700}}
-.logo{{fill:#39d353;font-size:18px}}.key{{fill:#8fd19e;font-size:12px;font-weight:700}}.value{{fill:#d7ffe3;font-size:12px}}.muted{{fill:#a7d9b2}}
+.title{{fill:#e4ffea;font-size:10px;font-weight:700}}.name{{fill:#39d353;font-size:13px;font-weight:700}}
+.logo{{fill:#39d353;font-size:19px}}.key{{fill:#8fd19e;font-size:11px;font-weight:700}}.value{{fill:#d7ffe3;font-size:10px}}.muted{{fill:#a7d9b2}}
 .prompt{{fill:#39d353;font-size:14px}}.rain{{fill:#39d353;font-size:11px;writing-mode:vertical-rl}}
 </style>
 </svg>
@@ -89,8 +89,8 @@ text{{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}}
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--username", default="USERNAME")
-    parser.add_argument("--height", type=int, default=240)
-    parser.add_argument("--width", type=int, default=360)
+    parser.add_argument("--height", type=int, default=330)
+    parser.add_argument("--width", type=int, default=300)
     parser.add_argument("--os", default="macOS + Linux")
     parser.add_argument("--stack", default="Python / JS / SVG / CI")
     parser.add_argument("--ships", default="tools + automation")
