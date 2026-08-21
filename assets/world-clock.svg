@@ -66,13 +66,13 @@
   </rect>
 </g>
 <text x="34" y="52" class="label">city</text><text x="142" y="52" class="label">time</text><text x="205" y="52" class="label">local date</text><text x="305" y="52" class="label">offset</text>
-<text x="34" y="70" class="city">Maryland</text><text x="142" y="70" class="time">23:36</text><text x="205" y="70" class="date">Thu Aug 20</text><text x="305" y="70" class="offset">UTC-04:00</text>
-<text x="34" y="93" class="city">UTC</text><text x="142" y="93" class="time">03:36</text><text x="205" y="93" class="date">Fri Aug 21</text><text x="305" y="93" class="offset">UTC+00:00</text>
-<text x="34" y="116" class="city">London</text><text x="142" y="116" class="time">04:36</text><text x="205" y="116" class="date">Fri Aug 21</text><text x="305" y="116" class="offset">UTC+01:00</text>
-<text x="34" y="139" class="city">Dubai</text><text x="142" y="139" class="time">07:36</text><text x="205" y="139" class="date">Fri Aug 21</text><text x="305" y="139" class="offset">UTC+04:00</text>
-<text x="34" y="162" class="city">Tokyo</text><text x="142" y="162" class="time">12:36</text><text x="205" y="162" class="date">Fri Aug 21</text><text x="305" y="162" class="offset">UTC+09:00</text>
-<text x="34" y="185" class="city">Sao Paulo</text><text x="142" y="185" class="time">00:36</text><text x="205" y="185" class="date">Fri Aug 21</text><text x="305" y="185" class="offset">UTC-03:00</text>
-<text x="34" y="202" class="updated">updated: 2026-08-21 03:36 UTC</text>
+<text x="34" y="70" class="city">Maryland</text><text x="142" y="70" class="time">00:31</text><text x="205" y="70" class="date">Fri Aug 21</text><text x="305" y="70" class="offset">UTC-04:00</text>
+<text x="34" y="93" class="city">UTC</text><text x="142" y="93" class="time">04:31</text><text x="205" y="93" class="date">Fri Aug 21</text><text x="305" y="93" class="offset">UTC+00:00</text>
+<text x="34" y="116" class="city">London</text><text x="142" y="116" class="time">05:31</text><text x="205" y="116" class="date">Fri Aug 21</text><text x="305" y="116" class="offset">UTC+01:00</text>
+<text x="34" y="139" class="city">Dubai</text><text x="142" y="139" class="time">08:31</text><text x="205" y="139" class="date">Fri Aug 21</text><text x="305" y="139" class="offset">UTC+04:00</text>
+<text x="34" y="162" class="city">Tokyo</text><text x="142" y="162" class="time">13:31</text><text x="205" y="162" class="date">Fri Aug 21</text><text x="305" y="162" class="offset">UTC+09:00</text>
+<text x="34" y="185" class="city">Sao Paulo</text><text x="142" y="185" class="time">01:31</text><text x="205" y="185" class="date">Fri Aug 21</text><text x="305" y="185" class="offset">UTC-03:00</text>
+<text x="34" y="202" class="updated">updated: 2026-08-21 04:31 UTC</text>
 <text x="526" y="202" class="prompt">$ chronyc tracking</text>
 <rect x="688" y="189" width="9" height="16" fill="#39d353" opacity="0">
   <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.85;0.86;0.99;1" dur="1s" begin="0.01s" repeatCount="indefinite"/>
