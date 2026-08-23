@@ -1,44 +1,9 @@
 {
   "username": "Martinezworldwide",
   "source": "https://github.com/users/Martinezworldwide/contributions",
-  "fetched_at": "2026-08-22T23:28:33+00:00",
+  "fetched_at": "2026-08-23T00:32:16+00:00",
   "yearly_total": 1747,
   "days": [
-    {
-      "date": "2025-08-17",
-      "level": 0,
-      "count": 0
-    },
-    {
-      "date": "2025-08-18",
-      "level": 0,
-      "count": 0
-    },
-    {
-      "date": "2025-08-19",
-      "level": 0,
-      "count": 0
-    },
-    {
-      "date": "2025-08-20",
-      "level": 0,
-      "count": 0
-    },
-    {
-      "date": "2025-08-21",
-      "level": 0,
-      "count": 0
-    },
-    {
-      "date": "2025-08-22",
-      "level": 0,
-      "count": 0
-    },
-    {
-      "date": "2025-08-23",
-      "level": 0,
-      "count": 0
-    },
     {
       "date": "2025-08-24",
       "level": 0,
@@ -1858,6 +1823,11 @@
       "date": "2026-08-22",
       "level": 1,
       "count": 2
+    },
+    {
+      "date": "2026-08-23",
+      "level": 0,
+      "count": 0
     }
   ]
 }
